@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+
+
+
+<div class="recipes">
+    <div class="recipe">
+        <p>#{{recipe.id}}</p>
+        <p>Название:  {{recipe.name}}</p>
+        <p>Дата публикации: {{recipe.created_at}}</p>
+        <p>Описание:  {{recipe.bio}}</p>
+    </div>
+</div>
+
+
+
+{% endblock %}

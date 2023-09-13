@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Рецепты</title>
+</head>
+<body class="bg-pan-top">
+    <header class="header">
+        <nav class="menu">
+            <a href="/">Рецепты</a>
+            <a href="/login">Вход</a>
+            <a href="/Adding_Recipe">Добавить рецепт</a>
+            <a href="/registration">Регистрация</a>
+        </nav>
+    </header>
+    <main class="conteiner">
+
+        <div>
+            {% for Recipe in Recipes_all %}
+                <div class="student">
+                    <p><b>#{{ Recipe.id }}</b></p>
+                    <b>
+                        <p class="name">Название:  {{ Recipe.name }}</p>
+                    </b>
+                    <p>Опублековано: {{ Recipe.created_at }}</p>
+                    <div class="bio">
+                        <h4>Описание:  {{ Recipe.bio }}</h4>
+                    </div>
+                    <a href="/recipe/{{Recipe.id}}">просмотреть</a>
+                </div>
+            {% endfor %}
+        </div>
+
+        {% block main %}
+        {% endblock %}
+    </main>
+    <footer>
+        
+    </footer>
+</body>
+</html>

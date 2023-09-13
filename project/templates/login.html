@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+
+<div class="form">
+    <form method="post">
+        <h1>Вход</h1>
+        <div class="in-form">
+            <label>Почта:</label>
+            <input type="text" name="email" placeholder="Введите почту" title="Введите вашу почту" required>
+        </div>
+        <div class="in-form">
+            <label>Пароль:</label>
+            <input type="password" name="password" placeholder="Введите пароль" title="Введите пароль" required>
+        </div>
+        <div>
+            <label>
+                <input type="checkbox">
+                Запомнить меня
+            </label>
+        </div>
+        <button type="submit">Войти</button>
+    </form>
+    <div class="flash">
+        {% for message in get_flashed_messages() %}
+            {{ message }}
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

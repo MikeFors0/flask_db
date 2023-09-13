@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+
+
+
+<form class="form" method="post">
+    <h1>Добавление рецепта</h1>
+    <div class="in-form">
+        <label>Название</label>
+        <input type="text" name="name" placeholder="название рецепта" title="Введите название рецепта" required>
+    </div>
+    <div class="in-form">
+        <label>Описание</label>
+        <input type="text" name="bio" placeholder="описание рецепта" title="Введите описание рецепта" required>
+    </div>
+    <button type="submit">Добавить</button>
+</form>
+<div class="flash">
+    {% for message in get_flashed_messages() %}
+        {{ message }}
+    {% endfor %}
+</div>
+
+
+
+
+{% endblock %}
