@@ -1,0 +1,36 @@
+PYTHON = python3
+.PHONY: help
+.SILENT:
+VENV_DIR = auth
+all: help install run
+
+install: pip-install 
+
+# venv-install:
+# 	python3 -m venv $(VENV_DIR)
+# 	sudo ./$(VENV_DIR)/bin/activate
+
+run: 
+	sh sh.sh
+
+pip-install:
+	sudo apt install python3.10-venv
+	pip install flask
+	pip install flask_sqlalchemy 
+	pip install werkzeug
+	pip install flask_login
+
+
+help: 
+	@echo "Choose a command run in Golang-bot:"
+	@echo ""
+	@echo "Targets:"
+	@echo "  go-build     		Build the Go project"
+	@echo "  go-run       		Run the Go project"
+	@echo "  help         		Show this help message"
+	@echo ""
+	@echo ""
+	@echo "All dependencies will install themselves, but you must have mongodb installed!"
+	@echo "You must also have golang installed!"
+	@echo ""
+	@echo "©Creator - https://github.com/MikeFors0/"

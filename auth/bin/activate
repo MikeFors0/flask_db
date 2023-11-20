@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/snake/Музыка/flask_db/auth"
+VIRTUAL_ENV="/home/pc/snake/flask_db/auth"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
